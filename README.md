@@ -1,7 +1,7 @@
 # Projeto de Bloco de Bloco - Devops
 
 ### Repositório de desenvolvimento e armazenamento de arquivos de projeto de bloco
-### Estudo de infraestrutura via código com o uso de ferramentas como 
+### Estudo de infraestrutura via código com o uso de ferramentas como:
 
 * Vagrant
 * Ansible
