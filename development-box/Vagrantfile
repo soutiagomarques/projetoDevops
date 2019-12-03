@@ -1,0 +1,34 @@
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "hashicorp/bionic64"
+
+    # Configurando Ip da VM
+    config.vm.network 'private_network', ip: '192.168.50.4'
+
+    # Instalando o Ansible na VM
+    config.vm.provision "shell",
+    inline: "apt-get update &&  \
+               apt-get install -y software-properties-common && \
+               apt-add-repository --yes --update ppa:ansible/ansible && \
+               apt-get install -y ansible "
+
+  # Configurando porta de acesso ao Docker
+  # config.vm.network “forwarded_port”, guest: <porta serviço vm>, host: <porta acesso externo>
+  
+  # Configurando porta de acesso ao Jenkins
+  # config.vm.network “forwarded_port”, guest: <porta serviço vm>, host: <porta acesso externo>
+
+  # Configurando porta de acesso ao serviço de Usuario
+  # config.vm.network “forwarded_port”, guest: <porta serviço vm>, host: <porta acesso externo>
+
+  # Configurando porta de acesso ao serviço de Filmes
+  # config.vm.network “forwarded_port”, guest: <porta serviço vm>, host: <porta acesso externo>
+
+  # Configurando chamada do playbook do Ansible 
+  # config.vm.provision "ansible" do |ansible|
+  #   ansible.inventory_path = "./hosts"
+  #   ansible.playbook = "./playbook.yml"
+  # end
+
+end
