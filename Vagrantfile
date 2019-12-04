@@ -16,18 +16,12 @@ Vagrant.configure("2") do |config|
     # copia a pasta ansible para a VM
     config.vm.synced_folder "./ansible/", "/ansible/"
 
-
-    # config.vm.provision "shell", path: "ansible/script.sh"
-
-
     #roda o arquivo playbook a partir da Vm
     config.vm.provision "ansible_local" do |ansible|
       ansible.playbook = "ansible/playbook.yml"
     end
 
-  # Configurando porta de acesso ao Docker
-  # config.vm.network "forwarded_port", guest: 8080, host: 8089
-
+    
   # Configurando porta de acesso ao Jenkins
   # config.vm.network "forwarded_port", guest: 8080, host: 8089
 
@@ -36,11 +30,5 @@ Vagrant.configure("2") do |config|
 
   # Configurando porta de acesso ao serviço de Filmes
   # config.vm.network "forwarded_port", guest: 8080, host: 8089
-
-  # Configurando chamada do playbook do Ansible 
-  # config.vm.provision "ansible" do |ansible|
-  #   ansible.inventory_path = "./hosts"
-  #   ansible.playbook = "./playbook.yml"
-  # end
 
 end
