@@ -27,3 +27,7 @@ Após a configuração do ambiente navegue até a pagina principal e execute o c
 ***vagrant up***
 
 Esse comando ira prover uma **Virtual Machine** com as configurações existentes no ***Vagrantfile***
+
+
+
+GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'senha root';

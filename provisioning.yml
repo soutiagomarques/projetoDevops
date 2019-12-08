@@ -15,6 +15,7 @@
         state: latest
       become: yes
       with_items:
+        - python-apt
         - mysql-server-5.6
         - python-mysqldb
 
@@ -47,3 +48,47 @@
       become: yes
       notify:
        - restart mysql
+
+    - name: Instalando git
+      become: yes
+      shell: apt-get install -y git
+
+    - name: Baixando primeiro Microserviço
+      become: yes
+      git:
+        repo: https://github.com/tdsmarques/microservico_cliente.git
+        dest: /srv/cliente
+
+    - name: baixando segundo Microserviço
+      become: yes
+      git:
+        repo: https://github.com/tdsmarques/microservico_filme.git
+        dest: /srv/filme
+
+    # - name: Instalando dependencias 1/2
+    #   shell:
+    #     "npm install"
+    #   args:
+    #     chdir: "/srv/filme"
+    #   register: npminstall_filme
+
+    # - name: Instalando dependencias 2/2
+    #   shell:
+    #     "npm install"
+    #   args:
+    #     chdir: "/srv/cliente"
+    #   register: npminstall_cliente
+
+    # - name: Iniciando Serviço de Filme
+    #   shell:
+    #     "npm install"
+    #   args:
+    #     chdir: "/srv/filme"
+    #   register: Iniciando Servico 1/2
+
+    # - name: Iniciando Serviço de Cliente
+    #   shell:
+    #     "npm install"
+    #   args:
+    #     chdir: "/srv/cliente"
+    #   register: Iniciando Servico 2/2
