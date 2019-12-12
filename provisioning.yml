@@ -65,30 +65,26 @@
         repo: https://github.com/tdsmarques/microservico_filme.git
         dest: /srv/filme
 
-    # - name: Instalando dependencias 1/2
-    #   shell:
-    #     "npm install"
-    #   args:
-    #     chdir: "/srv/filme"
-    #   register: npminstall_filme
+    - name: Install packages based on package.json.
+      npm:
+        path: /srv/filme
 
-    # - name: Instalando dependencias 2/2
-    #   shell:
-    #     "npm install"
-    #   args:
-    #     chdir: "/srv/cliente"
-    #   register: npminstall_cliente
+    - name: Install packages based on package.json.
+      npm:
+        path: /srv/cliente
 
-    # - name: Iniciando Serviço de Filme
-    #   shell:
-    #     "npm install"
-    #   args:
-    #     chdir: "/srv/filme"
-    #   register: Iniciando Servico 1/2
 
-    # - name: Iniciando Serviço de Cliente
-    #   shell:
-    #     "npm install"
-    #   args:
-    #     chdir: "/srv/cliente"
-    #   register: Iniciando Servico 2/2
+    - name: Iniciando Serviço de Filme
+      become: yes
+      shell:
+        "npm run test"
+      args:
+        chdir: "/srv/filme"
+      register: Rodando Testes Servico 1/2
+
+    - name: Iniciando Serviço de Cliente
+      shell:
+        "npm runt test"
+      args:
+        chdir: "/srv/cliente"
+      register: Rodando Testes Servico 2/2

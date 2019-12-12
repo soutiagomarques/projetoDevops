@@ -30,4 +30,4 @@ Esse comando ira prover uma **Virtual Machine** com as configurações existente
 
 
 
-GRANT ALL ON *.* TO 'root'@'%' IDENTIFIED BY 'senha root';
+GRANT ALL ON *.* TO 'tiago'@'%' IDENTIFIED BY '12345';
