@@ -1,16 +1,10 @@
-# Projeto de Bloco de Bloco - Devops
-
-### Repositório de desenvolvimento e armazenamento de arquivos de projeto de bloco
+# Devops
 ### Estudo de infraestrutura via código com o uso de ferramentas como:
 
 * Vagrant
 * Ansible
 * Jenkins
 * Grafana
-
-#### Códigos referentes a disciplina do curso de graduação de Engenharia de sotfware
-
-
 
 # Iniciando o projeto
 
@@ -28,6 +22,3 @@ Após a configuração do ambiente navegue até a pagina principal e execute o c
 
 Esse comando ira prover uma **Virtual Machine** com as configurações existentes no ***Vagrantfile***
 
-
-
-GRANT ALL ON *.* TO 'tiago'@'%' IDENTIFIED BY '12345';
